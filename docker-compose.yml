@@ -12,6 +12,11 @@ services:
       - "3000:3000"
     volumes:
       - grafanavol:/var/lib/grafana
+  data_push:
+    build: ./data_push
+    volumes:
+      - ./data_test:/var/lib/data
+    network_mode: "host"
 
 volumes:
   influxvol: {}
